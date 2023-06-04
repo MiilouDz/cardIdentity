@@ -1,0 +1,1567 @@
+{
+  "contractName": "CardIdentityVerification",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "cardNumber",
+          "type": "string"
+        }
+      ],
+      "name": "CardIdentityVerified",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "userID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "cardNumber",
+          "type": "string"
+        }
+      ],
+      "name": "verifyCardIdentity",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "blockHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getCardDataByBlock",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"userID\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"cardNumber\",\"type\":\"string\"}],\"name\":\"CardIdentityVerified\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"blockHash\",\"type\":\"bytes32\"}],\"name\":\"getCardDataByBlock\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"userID\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"cardNumber\",\"type\":\"string\"}],\"name\":\"verifyCardIdentity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/identityCard.sol\":\"CardIdentityVerification\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/identityCard.sol\":{\"keccak256\":\"0x78aece005a0dbe0407b943454741060926ae59a478c633db37fa9ab0ac4430ad\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://dba9824dbcc6bcee9493102e5529b7e690284cd64fbba485e9cc819d04edf170\",\"dweb:/ipfs/QmZBqvoV6R1ND8hHPrDf1mRX2UGLuE74HNebZpH6KfihmP\"]}},\"version\":1}",
+  "bytecode": "0x6080806040523461001657610643908161001c8239f35b600080fdfe608060409080825260048036101561001657600080fd5b6000917c010000000000000000000000000000000000000000000000000000000083350490816328aa9c531461038157506354724a1f1461005657600080fd5b3461037d578260031936011261037d578035602491823567ffffffffffffffff9081811161037957366023820112156103795780830135828111610364578751956020601f1992601f946100b0838688850116018b6104ef565b818a523684838301011161036057818b9285859301838d01378a0101526000199384430143811161034b574080156102ef578a528982528a8a2092835461026e578884556001809401978a5197881161025a57505061010f875461052a565b818111610219575b5081938187116001146101895750505050918061017894928899947f0d7d7fd0e067f320fa5ce4bd7ed7d4d9ee8757fccb6fee3fbc245ac02eaea81e999261017e575b50826002029260080260020a900419161790555b519283928361049e565b0390a180f35b88015191503861015a565b8695929491939616878b52848b20948b905b8282106102025750509285927f0d7d7fd0e067f320fa5ce4bd7ed7d4d9ee8757fccb6fee3fbc245ac02eaea81e9b9c9795926101789997600296106101e8575b505050500201905561016e565b8b0151918416600802850a900419169055388080806101db565b808985988294968f0151815501970193019061019b565b878b52828b20838381818b0104830193828b10610251575b0104019084905b828110610246575050610117565b8c8155018490610238565b93508293610231565b60418c9160e060020a634e487b7102835252fd5b87602d608492858f51937f08c379a00000000000000000000000000000000000000000000000000000000085528401528201527f43617264206964656e7469747920616c7265616479207665726966696564206660448201527f6f72207468697320626c6f636b000000000000000000000000000000000000006064820152fd5b50606487601885858f51937f08c379a00000000000000000000000000000000000000000000000000000000085528401528201527f426c6f636b2068617368206e6f7420617661696c61626c6500000000000000006044820152fd5b838b60118a60e060020a634e487b7102835252fd5b8a80fd5b858760418660e060020a634e487b7102835252fd5b8580fd5b5080fd5b9190503461049a57602036600319011261049a57803583528260205283832092606083019083821067ffffffffffffffff83111761048457508452825482526103df60026103d160018601610568565b946020850195865201610568565b8483015281511561040157506103fd9051915192519283928361049e565b0390f35b60849060208551917f08c379a0000000000000000000000000000000000000000000000000000000008352820152602860248201527f4e6f2063617264206964656e7469747920766572696669656420666f7220746860448201527f697320626c6f636b0000000000000000000000000000000000000000000000006064820152fd5b8060418460e060020a634e487b71026024945252fd5b8280fd5b90929192815260209260408483015280519081604084015260005b8281106104db57505060609293506000838284010152601f8019910116010190565b8181018601518482016060015285016104b9565b90601f8019910116810190811067ffffffffffffffff82111761051157604052565b60e060020a634e487b7102600052604160045260246000fd5b906001600283049216801561055e575b602083101461054557565b60e060020a634e487b7102600052602260045260246000fd5b91607f169161053a565b906040519182600082549261057c8461052a565b9081845260019485811690816000146105eb57506001146105a8575b50506105a6925003836104ef565b565b9093915060005260209081600020936000915b8183106105d35750506105a693508201013880610598565b855488840185015294850194879450918301916105bb565b9150506105a694506020925060ff19168284015215158102820101388061059856fea2646970667358221220e41f44a35ea510d92c230f37ec62160d5aa467f4de7f109b4bf75699965af6b064736f6c63430008110033",
+  "deployedBytecode": "0x608060409080825260048036101561001657600080fd5b6000917c010000000000000000000000000000000000000000000000000000000083350490816328aa9c531461038157506354724a1f1461005657600080fd5b3461037d578260031936011261037d578035602491823567ffffffffffffffff9081811161037957366023820112156103795780830135828111610364578751956020601f1992601f946100b0838688850116018b6104ef565b818a523684838301011161036057818b9285859301838d01378a0101526000199384430143811161034b574080156102ef578a528982528a8a2092835461026e578884556001809401978a5197881161025a57505061010f875461052a565b818111610219575b5081938187116001146101895750505050918061017894928899947f0d7d7fd0e067f320fa5ce4bd7ed7d4d9ee8757fccb6fee3fbc245ac02eaea81e999261017e575b50826002029260080260020a900419161790555b519283928361049e565b0390a180f35b88015191503861015a565b8695929491939616878b52848b20948b905b8282106102025750509285927f0d7d7fd0e067f320fa5ce4bd7ed7d4d9ee8757fccb6fee3fbc245ac02eaea81e9b9c9795926101789997600296106101e8575b505050500201905561016e565b8b0151918416600802850a900419169055388080806101db565b808985988294968f0151815501970193019061019b565b878b52828b20838381818b0104830193828b10610251575b0104019084905b828110610246575050610117565b8c8155018490610238565b93508293610231565b60418c9160e060020a634e487b7102835252fd5b87602d608492858f51937f08c379a00000000000000000000000000000000000000000000000000000000085528401528201527f43617264206964656e7469747920616c7265616479207665726966696564206660448201527f6f72207468697320626c6f636b000000000000000000000000000000000000006064820152fd5b50606487601885858f51937f08c379a00000000000000000000000000000000000000000000000000000000085528401528201527f426c6f636b2068617368206e6f7420617661696c61626c6500000000000000006044820152fd5b838b60118a60e060020a634e487b7102835252fd5b8a80fd5b858760418660e060020a634e487b7102835252fd5b8580fd5b5080fd5b9190503461049a57602036600319011261049a57803583528260205283832092606083019083821067ffffffffffffffff83111761048457508452825482526103df60026103d160018601610568565b946020850195865201610568565b8483015281511561040157506103fd9051915192519283928361049e565b0390f35b60849060208551917f08c379a0000000000000000000000000000000000000000000000000000000008352820152602860248201527f4e6f2063617264206964656e7469747920766572696669656420666f7220746860448201527f697320626c6f636b0000000000000000000000000000000000000000000000006064820152fd5b8060418460e060020a634e487b71026024945252fd5b8280fd5b90929192815260209260408483015280519081604084015260005b8281106104db57505060609293506000838284010152601f8019910116010190565b8181018601518482016060015285016104b9565b90601f8019910116810190811067ffffffffffffffff82111761051157604052565b60e060020a634e487b7102600052604160045260246000fd5b906001600283049216801561055e575b602083101461054557565b60e060020a634e487b7102600052602260045260246000fd5b91607f169161053a565b906040519182600082549261057c8461052a565b9081845260019485811690816000146105eb57506001146105a8575b50506105a6925003836104ef565b565b9093915060005260209081600020936000915b8183106105d35750506105a693508201013880610598565b855488840185015294850194879450918301916105bb565b9150506105a694506020925060ff19168284015215158102820101388061059856fea2646970667358221220e41f44a35ea510d92c230f37ec62160d5aa467f4de7f109b4bf75699965af6b064736f6c63430008110033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "99:1260:0:-:0;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "99:1260:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;513:12;;;99:1260;513:12;99:1260;;;;503:27;589:23;;99:1260;;;;;;;;;;;;;;;;;;;914:19;;;99:1260;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;972:40;99:1260;;;;;972:40;99:1260;;;;;;;;;;;;;;;;;;;;;;;972:40;;;;;:::i;:::-;;;;99:1260;;;;;;;-1:-1:-1;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;972:40;99:1260;;;;;972:40;99:1260;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;99:1260:0;;;;;;;;;;;;;-1:-1:-1;;;;;99:1260:0;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;1217:20;99:1260;;;;;;1328:19;;99:1260;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;;;;;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;-1:-1:-1;;;;;99:1260:0;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;99:1260:0;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:::o;:::-;;;;;-1:-1:-1;99:1260:0;;;;-1:-1:-1;99:1260:0;;-1:-1:-1;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;99:1260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.7.0 <0.9.0;\r\n\r\npragma solidity ^0.8.0;\r\n\r\ncontract CardIdentityVerification {\r\n    struct CardData {\r\n        uint256 userID;\r\n        string cardNumber;\r\n        string secretKey;\r\n    }\r\n    \r\n    mapping(bytes32 => CardData) private cardDataByBlock;\r\n    \r\n    event CardIdentityVerified(uint256 userID, string cardNumber);\r\n    \r\n    function verifyCardIdentity(uint256 userID, string memory cardNumber) public {\r\n        bytes32 blockHash = blockhash(block.number - 1); // Hash of the previous block\r\n        \r\n        require(blockHash != bytes32(0), \"Block hash not available\"); // Ensure previous block hash is available\r\n        \r\n        CardData storage cardData = cardDataByBlock[blockHash];\r\n        \r\n        require(cardData.userID == 0, \"Card identity already verified for this block\");\r\n        \r\n        cardData.userID = userID;\r\n        cardData.cardNumber = cardNumber;\r\n        \r\n        emit CardIdentityVerified(userID, cardNumber);\r\n    }\r\n    \r\n    function getCardDataByBlock(bytes32 blockHash) public view returns (uint256, string memory) {\r\n        CardData memory cardData = cardDataByBlock[blockHash];\r\n        \r\n        require(cardData.userID != 0, \"No card identity verified for this block\");\r\n        \r\n        return (cardData.userID, cardData.cardNumber);\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Miloud\\Desktop\\kk\\contracts\\identityCard.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/identityCard.sol",
+    "exportedSymbols": {
+      "CardIdentityVerification": [
+        111
+      ]
+    },
+    "id": 112,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:31:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "72:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "CardIdentityVerification",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 111,
+        "linearizedBaseContracts": [
+          111
+        ],
+        "name": "CardIdentityVerification",
+        "nameLocation": "108:24:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CardIdentityVerification.CardData",
+            "id": 9,
+            "members": [
+              {
+                "constant": false,
+                "id": 4,
+                "mutability": "mutable",
+                "name": "userID",
+                "nameLocation": "175:6:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "167:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 3,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "167:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6,
+                "mutability": "mutable",
+                "name": "cardNumber",
+                "nameLocation": "199:10:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "192:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "192:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "mutability": "mutable",
+                "name": "secretKey",
+                "nameLocation": "227:9:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 9,
+                "src": "220:16:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "220:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "CardData",
+            "nameLocation": "147:8:0",
+            "nodeType": "StructDefinition",
+            "scope": 111,
+            "src": "140:104:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14,
+            "mutability": "mutable",
+            "name": "cardDataByBlock",
+            "nameLocation": "293:15:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 111,
+            "src": "256:52:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_CardData_$9_storage_$",
+              "typeString": "mapping(bytes32 => struct CardIdentityVerification.CardData)"
+            },
+            "typeName": {
+              "id": 13,
+              "keyType": {
+                "id": 10,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "264:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "256:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_CardData_$9_storage_$",
+                "typeString": "mapping(bytes32 => struct CardIdentityVerification.CardData)"
+              },
+              "valueType": {
+                "id": 12,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 11,
+                  "name": "CardData",
+                  "nameLocations": [
+                    "275:8:0"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 9,
+                  "src": "275:8:0"
+                },
+                "referencedDeclaration": 9,
+                "src": "275:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                  "typeString": "struct CardIdentityVerification.CardData"
+                }
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "0d7d7fd0e067f320fa5ce4bd7ed7d4d9ee8757fccb6fee3fbc245ac02eaea81e",
+            "id": 20,
+            "name": "CardIdentityVerified",
+            "nameLocation": "327:20:0",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 19,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "userID",
+                  "nameLocation": "356:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "348:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "cardNumber",
+                  "nameLocation": "371:10:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "364:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:35:0"
+            },
+            "src": "321:62:0"
+          },
+          {
+            "body": {
+              "id": 78,
+              "nodeType": "Block",
+              "src": "472:548:0",
+              "statements": [
+                {
+                  "assignments": [
+                    28
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 28,
+                      "mutability": "mutable",
+                      "name": "blockHash",
+                      "nameLocation": "491:9:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 78,
+                      "src": "483:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 27,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "483:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 35,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 33,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 30,
+                            "name": "block",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967292,
+                            "src": "513:5:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_block",
+                              "typeString": "block"
+                            }
+                          },
+                          "id": 31,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "519:6:0",
+                          "memberName": "number",
+                          "nodeType": "MemberAccess",
+                          "src": "513:12:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "-",
+                        "rightExpression": {
+                          "hexValue": "31",
+                          "id": 32,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "528:1:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "src": "513:16:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 29,
+                      "name": "blockhash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967291,
+                      "src": "503:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_blockhash_view$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (uint256) view returns (bytes32)"
+                      }
+                    },
+                    "id": 34,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "503:27:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "483:47:0"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "id": 42,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 37,
+                          "name": "blockHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 28,
+                          "src": "589:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "hexValue": "30",
+                              "id": 40,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "610:1:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 39,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "602:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_bytes32_$",
+                              "typeString": "type(bytes32)"
+                            },
+                            "typeName": {
+                              "id": 38,
+                              "name": "bytes32",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "602:7:0",
+                              "typeDescriptions": {}
+                            }
+                          },
+                          "id": 41,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "602:10:0",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "src": "589:23:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "426c6f636b2068617368206e6f7420617661696c61626c65",
+                        "id": 43,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "614:26:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8273ba21b4795770435edf4a9bcd2d93ceac77c4d6b73c702ad61d83bc821bed",
+                          "typeString": "literal_string \"Block hash not available\""
+                        },
+                        "value": "Block hash not available"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_8273ba21b4795770435edf4a9bcd2d93ceac77c4d6b73c702ad61d83bc821bed",
+                          "typeString": "literal_string \"Block hash not available\""
+                        }
+                      ],
+                      "id": 36,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "581:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 44,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "581:60:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 45,
+                  "nodeType": "ExpressionStatement",
+                  "src": "581:60:0"
+                },
+                {
+                  "assignments": [
+                    48
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 48,
+                      "mutability": "mutable",
+                      "name": "cardData",
+                      "nameLocation": "722:8:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 78,
+                      "src": "705:25:0",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                        "typeString": "struct CardIdentityVerification.CardData"
+                      },
+                      "typeName": {
+                        "id": 47,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 46,
+                          "name": "CardData",
+                          "nameLocations": [
+                            "705:8:0"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 9,
+                          "src": "705:8:0"
+                        },
+                        "referencedDeclaration": 9,
+                        "src": "705:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                          "typeString": "struct CardIdentityVerification.CardData"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 52,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 49,
+                      "name": "cardDataByBlock",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "733:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_CardData_$9_storage_$",
+                        "typeString": "mapping(bytes32 => struct CardIdentityVerification.CardData storage ref)"
+                      }
+                    },
+                    "id": 51,
+                    "indexExpression": {
+                      "id": 50,
+                      "name": "blockHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28,
+                      "src": "749:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "733:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CardData_$9_storage",
+                      "typeString": "struct CardIdentityVerification.CardData storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "705:54:0"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 57,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 54,
+                            "name": "cardData",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 48,
+                            "src": "788:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                              "typeString": "struct CardIdentityVerification.CardData storage pointer"
+                            }
+                          },
+                          "id": 55,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "797:6:0",
+                          "memberName": "userID",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4,
+                          "src": "788:15:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 56,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "807:1:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "788:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "43617264206964656e7469747920616c726561647920766572696669656420666f72207468697320626c6f636b",
+                        "id": 58,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "810:47:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_79de301f214fef8f1f2caa4ab9ce7e8528f90fd02137ceb60f884a47007267db",
+                          "typeString": "literal_string \"Card identity already verified for this block\""
+                        },
+                        "value": "Card identity already verified for this block"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_79de301f214fef8f1f2caa4ab9ce7e8528f90fd02137ceb60f884a47007267db",
+                          "typeString": "literal_string \"Card identity already verified for this block\""
+                        }
+                      ],
+                      "id": 53,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "780:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "780:78:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 60,
+                  "nodeType": "ExpressionStatement",
+                  "src": "780:78:0"
+                },
+                {
+                  "expression": {
+                    "id": 65,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 61,
+                        "name": "cardData",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 48,
+                        "src": "879:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                          "typeString": "struct CardIdentityVerification.CardData storage pointer"
+                        }
+                      },
+                      "id": 63,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "888:6:0",
+                      "memberName": "userID",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4,
+                      "src": "879:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 64,
+                      "name": "userID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22,
+                      "src": "897:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "879:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 66,
+                  "nodeType": "ExpressionStatement",
+                  "src": "879:24:0"
+                },
+                {
+                  "expression": {
+                    "id": 71,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 67,
+                        "name": "cardData",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 48,
+                        "src": "914:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                          "typeString": "struct CardIdentityVerification.CardData storage pointer"
+                        }
+                      },
+                      "id": 69,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "923:10:0",
+                      "memberName": "cardNumber",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 6,
+                      "src": "914:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 70,
+                      "name": "cardNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 24,
+                      "src": "936:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "914:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 72,
+                  "nodeType": "ExpressionStatement",
+                  "src": "914:32:0"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 74,
+                        "name": "userID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 22,
+                        "src": "993:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 75,
+                        "name": "cardNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 24,
+                        "src": "1001:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 73,
+                      "name": "CardIdentityVerified",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 20,
+                      "src": "972:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (uint256,string memory)"
+                      }
+                    },
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "972:40:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 77,
+                  "nodeType": "EmitStatement",
+                  "src": "967:45:0"
+                }
+              ]
+            },
+            "functionSelector": "54724a1f",
+            "id": 79,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyCardIdentity",
+            "nameLocation": "404:18:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 25,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22,
+                  "mutability": "mutable",
+                  "name": "userID",
+                  "nameLocation": "431:6:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79,
+                  "src": "423:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "423:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24,
+                  "mutability": "mutable",
+                  "name": "cardNumber",
+                  "nameLocation": "453:10:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 79,
+                  "src": "439:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 23,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "439:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "422:42:0"
+            },
+            "returnParameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "472:0:0"
+            },
+            "scope": 111,
+            "src": "395:625:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 109,
+              "nodeType": "Block",
+              "src": "1124:232:0",
+              "statements": [
+                {
+                  "assignments": [
+                    90
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 90,
+                      "mutability": "mutable",
+                      "name": "cardData",
+                      "nameLocation": "1151:8:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 109,
+                      "src": "1135:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_CardData_$9_memory_ptr",
+                        "typeString": "struct CardIdentityVerification.CardData"
+                      },
+                      "typeName": {
+                        "id": 89,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 88,
+                          "name": "CardData",
+                          "nameLocations": [
+                            "1135:8:0"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 9,
+                          "src": "1135:8:0"
+                        },
+                        "referencedDeclaration": 9,
+                        "src": "1135:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_CardData_$9_storage_ptr",
+                          "typeString": "struct CardIdentityVerification.CardData"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 94,
+                  "initialValue": {
+                    "baseExpression": {
+                      "id": 91,
+                      "name": "cardDataByBlock",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "1162:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_CardData_$9_storage_$",
+                        "typeString": "mapping(bytes32 => struct CardIdentityVerification.CardData storage ref)"
+                      }
+                    },
+                    "id": 93,
+                    "indexExpression": {
+                      "id": 92,
+                      "name": "blockHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 81,
+                      "src": "1178:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1162:26:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_CardData_$9_storage",
+                      "typeString": "struct CardIdentityVerification.CardData storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1135:53:0"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 99,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 96,
+                            "name": "cardData",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 90,
+                            "src": "1217:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_CardData_$9_memory_ptr",
+                              "typeString": "struct CardIdentityVerification.CardData memory"
+                            }
+                          },
+                          "id": 97,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "1226:6:0",
+                          "memberName": "userID",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4,
+                          "src": "1217:15:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "hexValue": "30",
+                          "id": 98,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1236:1:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        },
+                        "src": "1217:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "4e6f2063617264206964656e7469747920766572696669656420666f72207468697320626c6f636b",
+                        "id": 100,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1239:42:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_386ecad88ae5b000ae5f4bdf4e6c3c11de00390e3733e317e3db11f49bd15af7",
+                          "typeString": "literal_string \"No card identity verified for this block\""
+                        },
+                        "value": "No card identity verified for this block"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_386ecad88ae5b000ae5f4bdf4e6c3c11de00390e3733e317e3db11f49bd15af7",
+                          "typeString": "literal_string \"No card identity verified for this block\""
+                        }
+                      ],
+                      "id": 95,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1209:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 101,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1209:73:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 102,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1209:73:0"
+                },
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "expression": {
+                          "id": 103,
+                          "name": "cardData",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 90,
+                          "src": "1311:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CardData_$9_memory_ptr",
+                            "typeString": "struct CardIdentityVerification.CardData memory"
+                          }
+                        },
+                        "id": 104,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "1320:6:0",
+                        "memberName": "userID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4,
+                        "src": "1311:15:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 105,
+                          "name": "cardData",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 90,
+                          "src": "1328:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_CardData_$9_memory_ptr",
+                            "typeString": "struct CardIdentityVerification.CardData memory"
+                          }
+                        },
+                        "id": 106,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "1337:10:0",
+                        "memberName": "cardNumber",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 6,
+                        "src": "1328:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "id": 107,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1310:38:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_string_memory_ptr_$",
+                      "typeString": "tuple(uint256,string memory)"
+                    }
+                  },
+                  "functionReturnParameters": 87,
+                  "id": 108,
+                  "nodeType": "Return",
+                  "src": "1303:45:0"
+                }
+              ]
+            },
+            "functionSelector": "28aa9c53",
+            "id": 110,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCardDataByBlock",
+            "nameLocation": "1041:18:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 81,
+                  "mutability": "mutable",
+                  "name": "blockHash",
+                  "nameLocation": "1068:9:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "1060:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 80,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1060:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1059:19:0"
+            },
+            "returnParameters": {
+              "id": 87,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 84,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "1100:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 83,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1100:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 86,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "1109:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 85,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1109:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1099:24:0"
+            },
+            "scope": 111,
+            "src": "1032:324:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 112,
+        "src": "99:1260:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:1324:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.17+commit.8df45f5f.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xFA8C4999533AfBC7f4d693Bf2b8472e3605d0f0f",
+      "transactionHash": "0x75638d10618781d889ea8a0a8a29fdd3a2f51bc7244b37726c0d1815470e49dd"
+    }
+  },
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-06-04T23:29:36.370Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
